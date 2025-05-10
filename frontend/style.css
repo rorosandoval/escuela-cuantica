@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: #111;
+  color: #fff;
+}
+
+.login-screen, .app {
+  width: 100%;
+  height: 100%;
+}
+
+.login-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.login-screen input, .login-screen button {
+  margin: 10px;
+  padding: 10px;
+  width: 250px;
+}
+
+.app {
+  display: none;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar content";
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: #222;
+  padding: 20px;
+}
+.sidebar h2 { margin-bottom: 20px; }
+.sidebar ul { list-style: none; }
+.sidebar li {
+  padding: 10px;
+  background: #333;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.header {
+  grid-area: header;
+  background: #1a1a1a;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header button, .header input[type="file"] {
+  padding: 8px 12px;
+  background: #444;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.content {
+  grid-area: content;
+  background: #1a1a1a;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.cell {
+  background: #2a2a2a;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+.cell.code { border-left: 4px solid #0af; }
+.cell.text { border-left: 4px solid #0a0; }
+
+textarea, pre {
+  width: 100%;
+  background: transparent;
+  color: white;
+  border: none;
+  resize: vertical;
+}
